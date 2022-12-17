@@ -17,6 +17,13 @@ void character(){
   Raylib.DrawCircle(widthX/2,heightY-200,30,Color.WHITE);
 }
 
+void characterL(){
+  Raylib.DrawCircle(450,heightY-200,45,Color.BLACK);
+}
+
+void characterR(){
+  Raylib.DrawCircle(widthX-450, heightY-200,45,Color.BLACK);
+}
 
 
 Raylib.InitWindow(widthX, heightY, "The title of my window");
@@ -28,16 +35,27 @@ while (!Raylib.WindowShouldClose())
   
   Raylib.ClearBackground(Color.BLACK);
   
-  character();
-
-  choice1();
-  choice2();
 
   if(Raylib.IsKeyPressed(KeyboardKey.KEY_A) )
-  {
+  { 
+    choice1();
+    choice2();
+    characterL();
     
+  } else if(Raylib.IsKeyPressed(KeyboardKey.KEY_D) )
+  { 
+    choice1();
+    choice2();
+    characterR();
+  } else (Raylib.IsKeyPressed(KeyboardKey.KEY_S) )
+  {
+    choice1();
+    choice2();
+    character();
+
   }
-  
+
+
   
   Raylib.EndDrawing();
 }
